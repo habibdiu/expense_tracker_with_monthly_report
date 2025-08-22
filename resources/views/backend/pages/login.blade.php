@@ -74,7 +74,9 @@
                                                     class="form-control @error('password') is-invalid @enderror"
                                                     id="userPassword" autocomplete="current-password"
                                                     placeholder="Password">
-                                                    <input type="checkbox" class="mt-2" onclick="show_password()" >Show Password
+                                                    <label for="" class="mt-3 d-flex align-items-center">
+                                                        <input type="checkbox" class="me-2" onclick="show_password()" >Show Password
+                                                    </label>
                                             </div>
                                             <div class="form-check mb-4">
                                                 <input type="checkbox" name="checkbox"

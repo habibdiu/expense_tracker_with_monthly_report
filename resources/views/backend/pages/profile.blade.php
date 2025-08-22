@@ -5,7 +5,7 @@
     <div class="page-content">
         <div class="mb-3">
             <div class="row">
-                <h4 class="">Welcome {{ Auth::user()->name }} </h4>
+                <h3 class="text-center">Welcome {{ Auth::user()->name }} </h3>
                 @if (session('success'))  
                 <div style="width:100%" class="alert alert-primary alert-dismissible fade show" role="alert">
                     <strong> Success!</strong> {{ session('success') }}
