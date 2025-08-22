@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\DashboardController;
+use App\Http\Middleware\backendAuthenticationMiddleware;
+use App\Http\Controllers\backend\AuthenticationController;
+
+Route::redirect('/', 'login');
+// backend
+Route::match(['get', 'post'], 'login', [AuthenticationController::class, 'login'])->name('login');
+// route prefix
+Route::prefix('admin')->group(function () {
+    // route name prefix
+    Route::name('admin.')->group(function () {
+        //middleware
+        Route::middleware(backendAuthenticationMiddleware::class)->group(function () {
+            Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
+            //profile
+            Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+            Route::post('profile-info/update', [ProfileController::class, 'profile_info_update'])->name('profile.info.update');
+            Route::post('profile-password/update', [ProfileController::class, 'profile_password_update'])->name('profile.password.update');
+            //dashboard
+            Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+           
+        });
+    });
+});
