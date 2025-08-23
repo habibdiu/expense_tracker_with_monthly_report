@@ -19,11 +19,23 @@ A simple Laravel-based expense tracking system with daily expenses, category man
 - Authentication for users
 - Simple Blade templates
 
-![Expense List](screenshots/login_page.PNG)
-![Add Expense](screenshots/admin_dashboard.PNG)
-![Add Expense](screenshots/add_category.PNG)
-![Expense List](screenshots/add_expense.PNG)
-![Expense List](screenshots/expense_list.PNG)
+### Screenshots
+
+#### Login Page
+<img src="screenshots/login_page.PNG" alt="Login Page" width="400">
+
+#### Admin Dashboard
+<img src="screenshots/admin_dashboard.PNG" alt="Admin Dashboard" width="400">
+
+#### Add Category
+<img src="screenshots/add_category.PNG" alt="Add Category" width="400">
+
+#### Add Expense
+<img src="screenshots/add_expense.PNG" alt="Add Expense" width="400">
+
+#### Expense List
+<img src="screenshots/expense_list.PNG" alt="Expense List" width="400">
+
 
 ## Requirements
 - PHP >= 8.1
