@@ -36,7 +36,7 @@ A simple Laravel-based expense tracking system with daily expenses, category man
 #### Expense List
 <img src="screenshots/list_expense.PNG" alt="Expense List" width="600">
 
-#### Expense List
+#### Expense List in graph
 <img src="screenshots/graph_expense.PNG" alt="Expense List" width="600">
 
 
