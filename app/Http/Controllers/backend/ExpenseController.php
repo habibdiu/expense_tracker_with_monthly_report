@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\backend;
-
 use PDOException;
+use Carbon\Carbon;
 use App\Models\Expense;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -21,13 +21,12 @@ class ExpenseController extends Controller implements HasMiddleware
 
     public function expense(Request $request)
     {
-        // Fetch all categories for the dropdown
         $categories = Category::all();
 
         $data = [
             'active_menu' => 'expense',
             'page_title'  => 'Add Expense',
-            'categories'  => $categories, // <-- send to Blade
+            'categories'  => $categories,
         ];
 
         if ($request->isMethod('post')) {
@@ -58,4 +57,27 @@ class ExpenseController extends Controller implements HasMiddleware
 
         return view('backend.pages.list_expense', compact('data'));
     }
+
+    public function monthlyReport()
+    {
+        $expenses = Expense::with('category')
+            ->whereYear('created_at', Carbon::now()->year)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->get();
+
+       
+        $grouped = $expenses->groupBy(fn($item) => $item->category->name ?? 'Others')
+        ->map(fn($group) => $group->sum('amount'));
+
+        $data = [
+            'active_menu' => 'monthly_report',
+            'page_title'  => 'Monthly Expenses Report',
+            'categories' => $grouped->keys()->toArray(),
+            'totals'     => $grouped->values()->toArray(),
+            'expenses'   => $expenses,
+        ];
+
+        return view('backend.pages.monthly_report', compact('data'));
+    }
+
 }

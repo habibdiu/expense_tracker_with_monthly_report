@@ -33,6 +33,8 @@ Route::prefix('admin')->group(function () {
 
             Route::match(['get', 'post'], 'expense', [ExpenseController::class, 'expense'])->name('expense');
             Route::get('expense/list', [ExpenseController::class, 'expense_list'])->name('expense_list');
+            Route::get('monthly-report', [ExpenseController::class, 'monthlyReport'])->name('monthly.report');
+
 
            
         });

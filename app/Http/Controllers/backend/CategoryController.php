@@ -19,7 +19,6 @@ class CategoryController extends Controller implements HasMiddleware
     }
 
 
-    // GET → show form
     public function category()
     {
         $data = [

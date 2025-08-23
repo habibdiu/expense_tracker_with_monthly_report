@@ -15,7 +15,7 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Category</label>
-                            <select name="category_id" class="form-control" required>
+                            <select name="category_id" class="form-select js-example-basic-single" required>
                                 <option value="">Select Category</option>
                                 @foreach($data['categories'] as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>

@@ -41,6 +41,7 @@
     <!--date picker end-->
     <link rel="stylesheet" href="{{ asset('backend_assets/vendors/select2/select2.min.css') }}">
     @stack('css')
+    @stack('scripts')
 
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('backend_assets/css/custom.css') }}">
