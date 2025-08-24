@@ -22,6 +22,8 @@ A simple Laravel-based expense tracking system with daily expenses, category man
 ### Screenshots
 
 #### Login Page
+-email address: admin@gmail.com
+-password: 123456
 <img src="screenshots/login_page.PNG" alt="Login Page" width="600">
 
 #### Admin Dashboard
