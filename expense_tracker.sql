@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2025 at 06:18 PM
+-- Generation Time: Aug 24, 2025 at 06:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,7 +54,8 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Food', '2025-08-23 07:02:53', '2025-08-23 07:02:53'),
 (2, 'Transport', '2025-08-23 07:03:48', '2025-08-23 07:03:48'),
 (3, 'Shopping', '2025-08-23 07:04:01', '2025-08-23 07:04:01'),
-(4, 'Others', '2025-08-23 07:04:05', '2025-08-23 07:04:05');
+(4, 'Others', '2025-08-23 07:04:05', '2025-08-23 07:04:05'),
+(5, 'Bills & Utilities', '2025-08-24 16:22:22', '2025-08-24 16:22:22');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ INSERT INTO `expenses` (`id`, `title`, `amount`, `category_id`, `created_at`, `u
 (1, 'Office to Chattagram BPS Software company office(Double Trip)', '5000', 2, '2025-08-23 07:27:15', '2025-08-23 07:27:15'),
 (4, 'Carpet(30/60) suare feet for office  guest room.', '10000', 3, '2025-08-23 07:32:37', '2025-08-23 07:32:37'),
 (5, 'Program for sucessfull project submission.', '7000', 1, '2025-08-23 08:13:25', '2025-08-23 08:13:25'),
-(6, 'Staffs party and washroom equipment chaged.', '1800', 4, '2025-08-23 08:14:33', '2025-08-23 08:14:33');
+(6, 'Staffs party and washroom equipment chaged.', '1800', 4, '2019-08-07 08:14:33', '2025-08-23 08:14:33');
 
 -- --------------------------------------------------------
 
@@ -114,6 +115,7 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
 ('0ve8hZwaNDDLOSeP7l9xpNT73qehT3ZeJ3dkVtp9', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibkhmSjJ5S2ZGYTFQUlNPZzRndWxGUlpnRjU4N3ZMOUNsR1Btdk9MZCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9leHBlbnNlIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1755971204),
+('dJrkwY4Y8WT6vIGfVR5kpmHqelSyKPR34pkBYFyD', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoickpBUXFFRElzSWwwUDdoV1o5aDZCYzdsZjhnNG5MbUhocTJ0Y1NVYSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9tb250aGx5LXJlcG9ydCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1756054477),
 ('Ib7GWIc7s592iZLUlwwsOb1KUjkYbg0l6AO2WK3N', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiaXB5MEt4VTluSkNzbGZhYlJERTltVDRhR2xMWUd0ODFlb2FaZHd4eiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9leHBlbnNlL2xpc3QiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1755939287);
 
 -- --------------------------------------------------------
@@ -195,13 +197,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
