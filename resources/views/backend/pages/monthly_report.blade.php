@@ -19,14 +19,23 @@
     new Chart(document.getElementById('monthlyChart'), {
         type: 'bar',
         data: {
-            labels: @json($data['categories']),
-            datasets: [{
-                label: 'Total Expenses',
-                data: @json($data['totals']), 
-                backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
+            labels: @json($data['categories']), // category names
+            datasets: [
+                {
+                    label: 'Category Total',
+                    data: @json($data['totals']),
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Monthly Total',
+                    data: @json($data['monthly_totals']),
+                    backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }
+            ]
         },
         options: {
             responsive: true,

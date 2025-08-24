@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2025 at 10:58 AM
+-- Generation Time: Aug 24, 2025 at 06:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -113,6 +113,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('0ve8hZwaNDDLOSeP7l9xpNT73qehT3ZeJ3dkVtp9', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibkhmSjJ5S2ZGYTFQUlNPZzRndWxGUlpnRjU4N3ZMOUNsR1Btdk9MZCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9leHBlbnNlIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1755971204),
 ('Ib7GWIc7s592iZLUlwwsOb1KUjkYbg0l6AO2WK3N', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiaXB5MEt4VTluSkNzbGZhYlJERTltVDRhR2xMWUd0ODFlb2FaZHd4eiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9leHBlbnNlL2xpc3QiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1755939287);
 
 -- --------------------------------------------------------
@@ -139,7 +140,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `photo`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', '01581054494', 'backend_assets/images/user/689850e0b8417.jpg', '2024-04-16 22:43:28', '$2y$12$S43VkewwjTJSy8Z7cMAaVOWVdjZnXaKw5zGw.bHXKOja0uR8oeFNK', '8Xn2CgMK2T6Wyl6NpuGPju8XSZZPY56q77yIF1ggjbwfq6wuETlAsYBqpliO', '2024-04-16 22:43:28', '2025-08-22 07:08:01');
+(1, 'Admin', 'admin@gmail.com', '01581054494', 'backend_assets/images/user/689850e0b8417.jpg', '2024-04-16 22:43:28', '$2y$12$S43VkewwjTJSy8Z7cMAaVOWVdjZnXaKw5zGw.bHXKOja0uR8oeFNK', '2JNknsjgamDURiLOFXkQdBXB4s3XDvlDRHVmpesslRAWit6cAafk0VdSM9eV', '2024-04-16 22:43:28', '2025-08-22 07:08:01');
 
 --
 -- Indexes for dumped tables

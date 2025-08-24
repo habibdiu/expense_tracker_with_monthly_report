@@ -1,0 +1,17 @@
+Requirements
+PHP >= 8.1
+
+Installation / Setup
+
+Node.js & npm (optional if using frontend assets)
+Composer
+MySQL Database connection
+Clone the repository:
+git clone https://github.com/habibdiu/expense_tracker_with_monthly_report
+cd expense-tracker
+
+
+Admin Login
+
+Email Adddress: admin@gmail.com
+Password: 123456

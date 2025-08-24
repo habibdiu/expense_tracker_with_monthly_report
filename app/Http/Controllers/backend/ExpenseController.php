@@ -52,32 +52,42 @@ class ExpenseController extends Controller implements HasMiddleware
         $data = [
             'active_menu' => 'expense_list',
             'page_title'  => 'Expense List',
-            'expenses'    => Expense::latest()->get(),
+            'expenses'    => Expense::with('category')
+                                ->orderBy('created_at', 'desc')
+                                ->get()
+                                ->groupBy(function ($expense) {
+                                    return Carbon::parse($expense->created_at)->format('F Y');
+                                }),
         ];
 
         return view('backend.pages.list_expense', compact('data'));
     }
 
+
+
+
     public function monthlyReport()
     {
-        $expenses = Expense::with('category')
-            ->whereYear('created_at', Carbon::now()->year)
-            ->whereMonth('created_at', Carbon::now()->month)
-            ->get();
+        $expenses = Expense::with('category')->get();
 
-       
-        $grouped = $expenses->groupBy(fn($item) => $item->category->name ?? 'Others')
-        ->map(fn($group) => $group->sum('amount'));
+        $groupedByCategory = $expenses->groupBy(fn($item) => $item->category->name ?? 'Others')
+                                    ->map(fn($group) => $group->sum('amount'));
+
+        $groupedByMonth = $expenses->groupBy(fn($item) => Carbon::parse($item->created_at)->format('F'))
+                                    ->map(fn($group) => $group->sum('amount'));
 
         $data = [
-            'active_menu' => 'monthly_report',
-            'page_title'  => 'Monthly Expenses Report',
-            'categories' => $grouped->keys()->toArray(),
-            'totals'     => $grouped->values()->toArray(),
-            'expenses'   => $expenses,
+            'active_menu'    => 'monthly_report',
+            'page_title'     => 'Monthly Expenses Report',
+            'categories'     => $groupedByCategory->keys()->toArray(),
+            'totals'         => $groupedByCategory->values()->toArray(),
+            'monthly_labels' => $groupedByMonth->keys()->toArray(),
+            'monthly_totals' => $groupedByMonth->values()->toArray(),
+            'expenses'       => $expenses,
         ];
 
         return view('backend.pages.monthly_report', compact('data'));
     }
+
 
 }
